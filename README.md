@@ -16,8 +16,25 @@ regarding this project.
 
 Questions: 
 
-Why exactly are physical qubits unstable?
+1. Why exactly are physical qubits unstable?
 
-What are proposed materials to shield qubits against decoherence? Why dod they fail?
+What are proposed materials to shield qubits against decoherence? Why did they fail?
 
-Why can't quantum scientists just stick up together a couple hundred thousands of qubits together to just create a big grid?
+3. Why can't quantum scientists just stick up together a couple hundred thousands of qubits together to just create a big grid?
+
+30.10.2026
+
+1. Physical qubits suffer from decoherence, gate infidelity, readout errors and crosstalk (influence of neighbouring qubits due to electromagnetic coupling
+Crosstalk becomes more severe in dense arrays, contributing to logical errors and limiting qubit scalability!). different kinds of qubits (superconducting, topological, trapped, spin, photonic
+) suffer from different kinds of
+behavioral instabilities to varying degrees, where one pro always comes at a cost of one con.
+
+3. Because of crosstalk!
+
+
+
+
+Works Cited
+
+
+1. https://www.researchgate.net/publication/393449400_Behavioural_Limitations_of_Qubits_A_Review_of_Stability_and_Reliability_Challenges_in_Quantum_Systems
