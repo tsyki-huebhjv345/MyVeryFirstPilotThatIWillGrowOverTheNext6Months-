@@ -31,8 +31,15 @@ behavioral instabilities to varying degrees, where one pro always comes at a cos
 
 3. Because of crosstalk!
 
+03.11.2026
 
-
+Update!
+I created a new file where the quantum operations would be more heavily used! Using the concepts I learned today on 
+quiskit (Compositions of probabilistic operations, Quantum state vectors
+Examples of qubit states
+Quantum states of other systems
+Measuring quantum states
+Unitary operations), I will make a simple code, trying to put as much in it as I can!
 
 Works Cited
 
