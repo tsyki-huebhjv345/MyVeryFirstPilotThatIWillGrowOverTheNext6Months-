@@ -41,6 +41,9 @@ Quantum states of other systems
 Measuring quantum states
 Unitary operations), I will make a simple code, trying to put as much in it as I can!
 
+note: just added a new rep with calculations implementing a fraction of stuff I learned
+math wise. but a fraction is not a zero, so it counts!
+
 
 05.11.2026
 
@@ -61,6 +64,8 @@ extended 4th node reacts
 8- measure the quantum states and check whether the euclidean norm is fullfilled
 9- perform a unitary operation on these 3 nodes
 10- measure the before and the after of the quantum state vectors, are they equal?
+
+note: did not finish, just added 9 nodes. going to come back tomorrow
 Works Cited
 
 
