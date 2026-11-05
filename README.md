@@ -41,6 +41,26 @@ Quantum states of other systems
 Measuring quantum states
 Unitary operations), I will make a simple code, trying to put as much in it as I can!
 
+
+05.11.2026
+
+Update
+Today I will extend the map that is in the 3_the_starter: 
+1- adding 9 nodes (16 in the end)
+2- assigning each node a + or - value (showing whether the node is on or off)
+3- taking 4 linked together nodes and assigning to each of the nodes a corresponding
+quantum bit and a quantum vector
+4- checking if the quantum vector is correct (the euclidean norm check)
+5- making all 3 nodes depend on the 4th node (that is, if 4th node is +, other nodes are able to change
+if the 4th node is -, then the other 3 are turned off)
+
+6- taking other 4 nodes, where only 3 are linked together, and the fourth one is just an extension
+of one of the 3 previous ones
+7- make the 3 linked nodes equal (apply the fair lottery vector), and check how the 
+extended 4th node reacts
+8- measure the quantum states and check whether the euclidean norm is fullfilled
+9- perform a unitary operation on these 3 nodes
+10- measure the before and the after of the quantum state vectors, are they equal?
 Works Cited
 
 
