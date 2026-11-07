@@ -49,24 +49,30 @@ math wise. but a fraction is not a zero, so it counts!
 
 Update
 Today I will extend the map that is in the 3_the_starter: 
-1- adding 9 nodes (16 in the end)
-2- assigning each node a + or - value (showing whether the node is on or off)
+1- adding 9 nodes (16 in the end) (done)
+2- assigning each node a + or - value (showing whether the node is on or off) (done)
 3- taking 4 linked together nodes and assigning to each of the nodes a corresponding
-quantum bit and a quantum vector
-4- checking if the quantum vector is correct (the euclidean norm check)
+quantum bit and a quantum vector (done)
+4- checking if the quantum vector is correct (the euclidean norm check) (done)
 5- making all 3 nodes depend on the 4th node (that is, if 4th node is +, other nodes are able to change
-if the 4th node is -, then the other 3 are turned off)
+if the 4th node is -, then the other 3 are turned off) (done)
 
 6- taking other 4 nodes, where only 3 are linked together, and the fourth one is just an extension
-of one of the 3 previous ones
+of one of the 3 previous ones (done)
 7- make the 3 linked nodes equal (apply the fair lottery vector), and check how the 
-extended 4th node reacts
-8- measure the quantum states and check whether the euclidean norm is fullfilled
-9- perform a unitary operation on these 3 nodes
-10- measure the before and the after of the quantum state vectors, are they equal?
+extended 4th node reacts (done)
+8- measure the quantum states and check whether the euclidean norm is fullfilled (done)
+9- perform a unitary operation on these 3 nodes (done)
+10- measure the before and the after of the quantum state vectors, are they equal? (done)
 
 note: did not finish, just added 9 nodes. going to come back tomorrow
-Works Cited
+
+
+07.11.2026
+
+1- Distance the first "Island" - "Vit; F; G; H"
+2- finish the yesterdays work load (all the done in parethesis were done today, 07.11, 3am, not 05.11, 11pm)
+3- upgraded version on plus-minus rep.
 
 
 1. https://www.researchgate.net/publication/393449400_Behavioural_Limitations_of_Qubits_A_Review_of_Stability_and_Reliability_Challenges_in_Quantum_Systems

@@ -51,7 +51,7 @@ grid.add_edge("K", "J", distance=15)
 grid.add_edge("K", "M", distance=45)
 
 # map
-pos = nx.spring_layout(grid, seed=42, k=0.6)
+pos = nx.spring_layout(grid, k=0.6)
 
 node_colors = []
 for node, data in grid.nodes(data=True):
