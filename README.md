@@ -74,5 +74,10 @@ note: did not finish, just added 9 nodes. going to come back tomorrow
 2- finish the yesterdays work load (all the done in parethesis were done today, 07.11, 3am, not 05.11, 11pm)
 3- upgraded version on plus-minus rep.
 
+09.11.2026
+
+Update!
+1-implement 2 new quantum concepts onto the code!
+
 
 1. https://www.researchgate.net/publication/393449400_Behavioural_Limitations_of_Qubits_A_Review_of_Stability_and_Reliability_Challenges_in_Quantum_Systems
