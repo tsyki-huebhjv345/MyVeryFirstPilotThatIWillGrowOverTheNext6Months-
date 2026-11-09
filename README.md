@@ -78,6 +78,8 @@ note: did not finish, just added 9 nodes. going to come back tomorrow
 
 Update!
 1-implement 2 new quantum concepts onto the code!
+2- so the updates are the 2 pauli operations, the x (NOT operation, flipping the sign) and the y (the phase
+and the bit flip - used for error correction and bit flips)
 
 
 1. https://www.researchgate.net/publication/393449400_Behavioural_Limitations_of_Qubits_A_Review_of_Stability_and_Reliability_Challenges_in_Quantum_Systems
