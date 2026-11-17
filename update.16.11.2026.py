@@ -96,6 +96,20 @@ def born_rule_measure(vec):
     outcome = "0 (Stable)" if random.random() < prob_0 else "1 (Trip)"
     return prob_0, prob_1, outcome
 
+# --- R = HSH ("HALF-NOT") GATE HELPER FOR NODE L ---
+def apply_R_gate(vec):
+    """Applies R = H * S * H = [[(1+i)/2, (1-i)/2], [(1-i)/2, (1+i)/2]]."""
+    a = (1 + 1j) / 2
+    b = (1 - 1j) / 2
+    new_0 = a * vec[0] + b * vec[1]
+    new_1 = b * vec[0] + a * vec[1]
+    return [new_0, new_1]
+
+
+
+
+
+
 print("==================================================================")
 print("     PHASE 1.5: INITIALIZING LOOP QUANTUM STATE VECTORS           ")
 print("==================================================================")
@@ -137,20 +151,31 @@ for gate_label, vec in pauli_vectors.items():
     print(f"Gate [{gate_label}]: Vector [{vec[0]:.3f}, {vec[1]:.3f}] -> Norm: {norm:.4f} | Born Odds: 0={p0:.0%}, 1={p1:.0%} -> {outcome}")
 
 print("\n==================================================================")
-print("     PHASE 1.65: PHASE GATES ON D_HUB SUB-TREE (L = S, B = T)     ")
+print("     PHASE 1.65: PHASE & COMPOSITION GATES (L = HSH, B = T)       ")
 print("==================================================================")
 
+# 1. Node L starts at |0> = [1.0, 0.0] and runs R = HSH once, then twice (R^2 = NOT)
+vec_L_start = [1.0, 0.0]
+vec_L_once = apply_R_gate(vec_L_start)
+vec_L_twice = apply_R_gate(vec_L_once)
+
+norm_L1 = math.sqrt(abs(vec_L_once[0]) ** 2 + abs(vec_L_once[1]) ** 2)
+p0_1, p1_1, out_1 = born_rule_measure(vec_L_once)
+print(f"Node [L] (1x R = HSH) [Status: {status['L']}]: Norm: {norm_L1:.4f} | Born Odds: 0={p0_1:.0%}, 1={p1_1:.0%} -> {out_1}")
+
+norm_L2 = math.sqrt(abs(vec_L_twice[0]) ** 2 + abs(vec_L_twice[1]) ** 2)
+p0_2, p1_2, out_2 = born_rule_measure(vec_L_twice)
+print(f"Node [L] (2x R = NOT) [Status: {status['L']}]: Norm: {norm_L2:.4f} | Born Odds: 0={p0_2:.0%}, 1={p1_2:.0%} -> {out_2}")
+
+# 2. Node B keeps its original T-Gate (45-degree phase shift)
 plus_state = [1.0 / math.sqrt(2), 1.0 / math.sqrt(2)]
-# S-Gate: 90-degree phase shift (multiplies |1> by i)
-vec_L = [plus_state[0], 1j * plus_state[1]]
-# T-Gate: 45-degree phase shift (multiplies |1> by (1+i)/sqrt(2))
 t_factor = (1 + 1j) / math.sqrt(2)
 vec_B = [plus_state[0], t_factor * plus_state[1]]
 
-for node_name, gate_name, vec in [("L", "S-Gate (90°)", vec_L), ("B", "T-Gate (45°)", vec_B)]:
-    norm = math.sqrt(abs(vec[0]) ** 2 + abs(vec[1]) ** 2)
-    p0, p1, outcome = born_rule_measure(vec)
-    print(f"Node [{node_name}] ({gate_name}) [Status: {status[node_name]}]: Norm: {norm:.4f} | Born Odds: 0={p0:.0%}, 1={p1:.0%} -> {outcome}")
+norm_B = math.sqrt(abs(vec_B[0]) ** 2 + abs(vec_B[1]) ** 2)
+p0_B, p1_B, outcome_B = born_rule_measure(vec_B)
+print(f"Node [B] (T-Gate 45°) [Status: {status['B']}]: Norm: {norm_B:.4f} | Born Odds: 0={p0_B:.0%}, 1={p1_B:.0%} -> {outcome_B}")
+
 
 print("\n==================================================================")
 print("     PHASE 1.7: RUNNING TRIPLE UNITARY VECTOR VERIFICATION        ")
