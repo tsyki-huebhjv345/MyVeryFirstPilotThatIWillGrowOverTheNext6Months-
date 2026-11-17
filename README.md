@@ -84,7 +84,7 @@ and the bit flip - used for error correction and bit flips)
 
 16.11.2026
 1-a week on hiatus and I'm back. therefore I will be working 3x (cuz the last week was lost too). 
-the file with updates is pauli-x-y-gates.
+the file with updates is update.16.11.2026.
 2-3 new concepts implemented today: unitary operations on qubits; compositions of qubit unitary operations;
 unitary operations on larger systems.
 
