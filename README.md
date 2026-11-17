@@ -91,6 +91,10 @@ unitary operations on larger systems.
 born rule measure added to each quantum operation; the B got the T gate added!
 note* the larger systems will be later (permutation matrices and the quantum Fourier transform)
 
+17.11.2026
+1-today's 3 topics are: vectors and matrices in python; states measurements and operations;
+define and display state vectors.
+
 
 
 1. https://www.researchgate.net/publication/393449400_Behavioural_Limitations_of_Qubits_A_Review_of_Stability_and_Reliability_Challenges_in_Quantum_Systems
