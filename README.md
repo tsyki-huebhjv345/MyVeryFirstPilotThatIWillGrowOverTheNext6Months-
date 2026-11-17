@@ -87,6 +87,11 @@ and the bit flip - used for error correction and bit flips)
 the file with updates is update.16.11.2026.
 2-3 new concepts implemented today: unitary operations on qubits; compositions of qubit unitary operations;
 unitary operations on larger systems.
+3- the L got the half-Not qate! 2 new nodes that reperesent quantum gates added ("Z" and "Id"); 
+born rule measure added to each quantum operation; the B got the T gate added!
+note* the larger systems will be later (permutation matrices and the quantum Fourier transform)
+
 
 
 1. https://www.researchgate.net/publication/393449400_Behavioural_Limitations_of_Qubits_A_Review_of_Stability_and_Reliability_Challenges_in_Quantum_Systems
+2. https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/single-systems/quantum-information#examples-of-unitary-operations-on-qubits
