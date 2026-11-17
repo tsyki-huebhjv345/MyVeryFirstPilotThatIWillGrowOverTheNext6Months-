@@ -97,7 +97,9 @@ define and display state vectors.
 2-today's probably the most important update is the additianal instalations that you have to do
 for the code:
 pip install qiskit jupyter sympy matplotlib pylatexenc
-paste it in the terminal and it'll take about 2-3mins to download. 
+paste it in the terminal and it'll take about 2-3mins to download.
+3-Turns out there's this thing called Jypiter Notebook and by using it you can see
+your vector/matrices multiplication in a clean latex format!
 
 
 
