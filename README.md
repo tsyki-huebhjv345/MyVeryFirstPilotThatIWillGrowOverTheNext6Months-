@@ -100,6 +100,9 @@ pip install qiskit jupyter sympy matplotlib pylatexenc
 paste it in the terminal and it'll take about 2-3mins to download.
 3-Turns out there's this thing called Jypiter Notebook and by using it you can see
 your vector/matrices multiplication in a clean latex format!
+4-session is done in a record 1h: there are 2 updates:
+1 - 17.11.session2.ipynb (the second jypiter notebook)
+2 - quiskit_practice.ipynb (the first jypiter notebook with simpler examples)
 
 
 
