@@ -104,6 +104,10 @@ your vector/matrices multiplication in a clean latex format!
 1 - 17.11.session2.ipynb (the second jypiter notebook)
 2 - quiskit_practice.ipynb (the first jypiter notebook with simpler examples)
 
+19.11.2026
+1-today I plan to implement 6 topics
+2-first topic - measuring and normalising the quantum states
+
 
 
 1. https://www.researchgate.net/publication/393449400_Behavioural_Limitations_of_Qubits_A_Review_of_Stability_and_Reliability_Challenges_in_Quantum_Systems
