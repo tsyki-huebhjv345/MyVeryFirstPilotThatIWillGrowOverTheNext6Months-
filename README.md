@@ -106,7 +106,8 @@ your vector/matrices multiplication in a clean latex format!
 
 19.11.2026
 1-today I plan to implement 6 topics
-2-first topic - measuring and normalising the quantum states
+2-first topic - measuring and normalising the quantum states + histogram; second topic - unitary operations; 
+third topic - 
 
 
 
