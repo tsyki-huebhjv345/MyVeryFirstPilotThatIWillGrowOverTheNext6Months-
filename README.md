@@ -110,6 +110,14 @@ your vector/matrices multiplication in a clean latex format!
 single systems;
 3- wohoo!! I just finished the Single Systems chapter on Quiskit!<D
 
+23.11.2026
+1- plan is: intro to multiple systems (Quiskit) - honestly understood about 45%
+
+24.11.2026
+1- Classical states via the Cartesian product
+2- Probabilistic states
+*Note that the biggest yet and basically the heart of all concepts is [update.16.11.2026.py](update.16.11.2026.py) 
+
 
 
 
