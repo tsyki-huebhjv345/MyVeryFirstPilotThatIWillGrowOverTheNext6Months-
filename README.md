@@ -117,7 +117,10 @@ single systems;
 1- Classical states via the Cartesian product
 2- Probabilistic states
 *Note that the biggest yet and basically the heart of all concepts is [update.16.11.2026.py](update.16.11.2026.py) 
-
+3- I finished the reading for these concepts, but there isn't much new to add to the code. most of the
+things I covered today are not yet applicable onto the current graph. the cartesian product will later on be useful for 
+complex systems where it would be helpful to combine them in order to apply quantum gates onto them all at once and keep
+track of the calculations.
 
 
 
