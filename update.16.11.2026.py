@@ -60,20 +60,19 @@ grid.add_edge("Sok_Cell", "Y", distance=25)
 grid.add_edge("Sok_Cell", "Z", distance=25)
 grid.add_edge("Sok_Cell", "Id", distance=25)
 
-# --- CLASSICAL SIMULATION LOGIC ---
-status = {}
-dependencies = {
+status = {} #for remembering if a node is + or -
+dependencies = { #what depends on what, the sps depends on nothing, it's the center
     "S_Ps": [], "D_Hub": ["S_Ps"], "Vit_Cell": ["S_Ps"], "Sok_Cell": ["S_Ps"], "I": ["S_Ps"],
     "N_Ps": ["D_Hub"], "L": ["D_Hub"], "B": ["D_Hub"], "Nov_Cell": ["N_Ps"], "C": ["B"],
     "H": ["Vit_Cell"], "F": ["Vit_Cell"], "G": ["H", "F"], "K": ["I"], "J": ["I"], "M": ["K"],
     "X": ["Sok_Cell"], "Y": ["Sok_Cell"], "Z": ["Sok_Cell"], "Id": ["Sok_Cell"]
 }
 
-ONLINE_PROBABILITY = 0.85
+ONLINE_PROBABILITY = 0.85 #every node has an 85% chance of being +
 for node in dependencies.keys():
     parents = dependencies[node]
     if not parents:
-        status[node] = "+" if random.random() < ONLINE_PROBABILITY else "-"
+        status[node] = "+" if random.random()<ONLINE_PROBABILITY else "-"
     else:
         parent_failed = any(status[p] == "-" for p in parents)
         if parent_failed:
@@ -82,9 +81,8 @@ for node in dependencies.keys():
             if node == "X":
                 status[node] = "-" if status["Sok_Cell"] == "+" else "+"
             else:
-                status[node] = "+" if random.random() < ONLINE_PROBABILITY else "-"
+                status[node] = "+" if random.random()<ONLINE_PROBABILITY else "-"
 
-# --- BORN RULE MEASUREMENT HELPER ---
 def born_rule_measure(vec):
     """Calculates real-world probabilities (|alpha|^2 and |beta|^2) and collapses the state."""
     prob_0 = abs(vec[0]) ** 2
