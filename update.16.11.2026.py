@@ -2,11 +2,9 @@ import random
 import math
 import networkx as nx
 import matplotlib.pyplot as plt
-
-# Initialize graph
+#graph
 grid = nx.Graph()
-
-# Define all nodes with their properties (Original + Z and Id nodes)
+#nodes with and their properties
 nodes_data = {
     "S_Ps": {"type": "vertebrate", "load": 400},
     "D_Hub": {"type": "vertebrate", "load": 500},
@@ -14,8 +12,8 @@ nodes_data = {
     "Nov_Cell": {"type": "cellular", "capacity": 100},
     "Vit_Cell": {"type": "cellular", "capacity": 100},
     "Sok_Cell": {"type": "cellular", "capacity": 100},
-    "L": {"type": "cellular", "capacity": 100},   # Assigned S-Gate
-    "B": {"type": "vertebrate", "load": 200},     # Assigned T-Gate
+    "L": {"type": "cellular", "capacity": 100},#S-Gate
+    "B": {"type": "vertebrate", "load": 200},#T-Gate
     "C": {"type": "cellular", "capacity": 100},
     "H": {"type": "cellular", "capacity": 100},
     "F": {"type": "cellular", "capacity": 100},
@@ -24,41 +22,39 @@ nodes_data = {
     "K": {"type": "cellular", "capacity": 100},
     "J": {"type": "cellular", "capacity": 100},
     "M": {"type": "cellular", "capacity": 100},
-    "X": {"type": "cellular", "capacity": 100},   # Pauli-X node
-    "Y": {"type": "cellular", "capacity": 100},   # Pauli-Y node
-    "Z": {"type": "cellular", "capacity": 100},   # New Pauli-Z node
-    "Id": {"type": "cellular", "capacity": 100}   # New Identity (I) node
+    "X": {"type": "cellular", "capacity": 100},#Pauli-X
+    "Y": {"type": "cellular", "capacity": 100},#Pauli-Y
+    "Z": {"type": "cellular", "capacity": 100},#Pauli-Z
+    "Id": {"type": "cellular", "capacity": 100}#Identity-I
 }
-
-for node, attrs in nodes_data.items():
-    grid.add_node(node, **attrs)
-
-# Connect the nodes with edges
+for node, attrs in nodes_data.items():#loop through every possible node
+    grid.add_node(node, **attrs)#attach the information about nodes and add onto the NetworkX graph
+#connect nodes with edges
 grid.add_edge("S_Ps", "D_Hub", distance=480, weight=1.0)
 grid.add_edge("S_Ps", "Vit_Cell", distance=120, weight=0.2)
 grid.add_edge("S_Ps", "Sok_Cell", distance=30, weight=1.0)
 grid.add_edge("S_Ps", "I", distance=50, weight=1.0)
 
-# D_Hub Sub-tree
+#D_Hub tree
 grid.add_edge("D_Hub", "N_Ps", distance=540)
 grid.add_edge("D_Hub", "L", distance=100)
 grid.add_edge("D_Hub", "B", distance=150)
 grid.add_edge("N_Ps", "Nov_Cell", distance=30)
 grid.add_edge("B", "C", distance=80)
 
-# Vit_Cell Closed Loop
+#Vit_Cell Loop
 grid.add_edge("Vit_Cell", "H", distance=40, weight=2.0)
 grid.add_edge("Vit_Cell", "F", distance=40, weight=2.0)
 grid.add_edge("H", "G", distance=20, weight=2.0)
 grid.add_edge("F", "G", distance=20, weight=2.0)
 
-# I Sub-tree and K-J Loop
+#I tree and K-J Loop
 grid.add_edge("I", "K", distance=30)
 grid.add_edge("I", "J", distance=30)
 grid.add_edge("K", "J", distance=15)
 grid.add_edge("K", "M", distance=45)
 
-# All 4 Pauli branches out of Sok_Cell
+#Pauli branches
 grid.add_edge("Sok_Cell", "X", distance=25)
 grid.add_edge("Sok_Cell", "Y", distance=25)
 grid.add_edge("Sok_Cell", "Z", distance=25)
