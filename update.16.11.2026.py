@@ -227,5 +227,5 @@ if square_nodes_list:
 nx.draw_networkx_edges(grid, pos, alpha=0.5)
 nx.draw_networkx_labels(grid, pos, labels=labels, font_size=7, font_weight="bold")
 
-print("Grid Operational. Layout Simulation complete.")
+print("Grid finished.")
 plt.show()
