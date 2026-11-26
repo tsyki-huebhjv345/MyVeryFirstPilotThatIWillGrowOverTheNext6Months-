@@ -84,29 +84,24 @@ for node in dependencies.keys():
                 status[node] = "+" if random.random()<ONLINE_PROBABILITY else "-"
 
 def born_rule_measure(vec):
-    """Calculates real-world probabilities (|alpha|^2 and |beta|^2) and collapses the state."""
+
     prob_0 = abs(vec[0]) ** 2
     prob_1 = abs(vec[1]) ** 2
     outcome = "0 (Stable)" if random.random() < prob_0 else "1 (Trip)"
     return prob_0, prob_1, outcome
 
-# --- R = HSH ("HALF-NOT") GATE HELPER FOR NODE L ---
+#R = HSH ("half-NOT")
 def apply_R_gate(vec):
-    """Applies R = H * S * H = [[(1+i)/2, (1-i)/2], [(1-i)/2, (1+i)/2]]."""
+
     a = (1 + 1j) / 2
     b = (1 - 1j) / 2
     new_0 = a * vec[0] + b * vec[1]
     new_1 = b * vec[0] + a * vec[1]
     return [new_0, new_1]
 
-
-
-
-
-
-print("==================================================================")
-print("     PHASE 1.5: INITIALIZING LOOP QUANTUM STATE VECTORS           ")
-print("==================================================================")
+print("_____________________________________________________________")
+print("     1.5: LOOP quantum state vectors           ")
+print("_____________________________________________________________")
 
 verified_squares = ["I", "K", "J"]
 vit_loop_nodes = ["Vit_Cell", "F", "G", "H"]
@@ -114,7 +109,7 @@ lottery_nodes = ["I", "K", "J"]
 pauli_nodes = ["X", "Y", "Z", "Id"]
 phase_nodes = ["L", "B"]
 
-# 1. Print verification calculations for the Euclidean Norm (Vit_Cell Loop)
+#verification calculations - the Euclidean Norm (Vit_Cell)
 for node in vit_loop_nodes:
     theta_mock = random.uniform(0, 2 * math.pi)
     vec = [math.cos(theta_mock), math.sin(theta_mock)]
@@ -124,9 +119,9 @@ for node in vit_loop_nodes:
     p0, p1, outcome = born_rule_measure(vec)
     print(f"Node [{node:8}]: Vector [{a_val:.3f}, {b_val:.3f}] -> Norm: {euclidean_norm:.4f} | Born Odds: 0={p0:.0%}, 1={p1:.0%} -> {outcome}")
 
-print("\n==================================================================")
-print("     PHASE 1.6: ALL 4 PAULI GATES ON SOK_CELL BRANCH (I, X, Y, Z) ")
-print("==================================================================")
+print("\n_____________________________________________________________")
+print("     1.6: 4 PAULI GATES - Sok Cell Branch ")
+print("_____________________________________________________________")
 
 theta_sok = random.uniform(0, 2 * math.pi)
 sok_vector = [math.cos(theta_sok), math.sin(theta_sok)]
@@ -144,11 +139,11 @@ for gate_label, vec in pauli_vectors.items():
     p0, p1, outcome = born_rule_measure(vec)
     print(f"Gate [{gate_label}]: Vector [{vec[0]:.3f}, {vec[1]:.3f}] -> Norm: {norm:.4f} | Born Odds: 0={p0:.0%}, 1={p1:.0%} -> {outcome}")
 
-print("\n==================================================================")
-print("     PHASE 1.65: PHASE & COMPOSITION GATES (L = HSH, B = T)       ")
-print("==================================================================")
+print("\n_____________________________________________________________")
+print("     1.65: PHASE & COMPOSITION GATES (L=HSH, B=T)       ")
+print("_____________________________________________________________")
 
-# 1. Node L starts at |0> = [1.0, 0.0] and runs R = HSH once, then twice (R^2 = NOT)
+#L starts at |0> = [1.0, 0.0] and runs R = HSH once, then two more (R^2 = NOT-gate)
 vec_L_start = [1.0, 0.0]
 vec_L_once = apply_R_gate(vec_L_start)
 vec_L_twice = apply_R_gate(vec_L_once)
@@ -161,7 +156,7 @@ norm_L2 = math.sqrt(abs(vec_L_twice[0]) ** 2 + abs(vec_L_twice[1]) ** 2)
 p0_2, p1_2, out_2 = born_rule_measure(vec_L_twice)
 print(f"Node [L] (2x R = NOT) [Status: {status['L']}]: Norm: {norm_L2:.4f} | Born Odds: 0={p0_2:.0%}, 1={p1_2:.0%} -> {out_2}")
 
-# 2. Node B keeps its original T-Gate (45-degree phase shift)
+#B remains with T-Gate (45-degrees shift)
 plus_state = [1.0 / math.sqrt(2), 1.0 / math.sqrt(2)]
 t_factor = (1 + 1j) / math.sqrt(2)
 vec_B = [plus_state[0], t_factor * plus_state[1]]
@@ -171,9 +166,9 @@ p0_B, p1_B, outcome_B = born_rule_measure(vec_B)
 print(f"Node [B] (T-Gate 45°) [Status: {status['B']}]: Norm: {norm_B:.4f} | Born Odds: 0={p0_B:.0%}, 1={p1_B:.0%} -> {outcome_B}")
 
 
-print("\n==================================================================")
-print("     PHASE 1.7: RUNNING TRIPLE UNITARY VECTOR VERIFICATION        ")
-print("==================================================================")
+print("\n_____________________________________________________________")
+print("     1.7: UNITARY vector verification        ")
+print("_____________________________________________________________")
 
 lottery_amplitude = 1.0 / math.sqrt(2)
 for node in lottery_nodes:
@@ -189,9 +184,9 @@ for node in lottery_nodes:
     print(f"        -> After Pauli-X  : [{v_u2[0]:.3f}, {v_u2[1]:.3f}]")
     print(f"        -> After Hadamard : [{v_u3[0]:.3f}, {v_u3[1]:.3f}] | Born Odds: 0={p0:.0%}, 1={p1:.0%} -> {outcome}")
     print(f"        Result: Vector Before == After Transformations -> Generated good.\n")
-print("==================================================================")
+print("_____________________________________________________________")
 
-#MAPPING
+#MAP
 pos = nx.spring_layout(grid, k=0.7, weight='weight', iterations=50)
 labels = {node: f"{node}\n({status[node]})" for node in grid.nodes()}
 
